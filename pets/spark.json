@@ -1,0 +1,43 @@
+{
+  "name": "Spark",
+  "description": "A bright ASCII spark with playful status frames.",
+  "color": "38;5;220",
+  "personality": {
+    "editing": ["shaping", "bright edit"],
+    "searching": ["spark hunt", "looking close"],
+    "running": ["ignition", "hot path"],
+    "success": ["spark landed", "lit up"],
+    "error": ["flicker", "cooldown"],
+    "compacting": ["banking embers"],
+    "confident": ["glow streak"],
+    "busy": ["full glow"],
+    "default": ["tiny fire"]
+  },
+  "personality_zh": {
+    "editing": ["亮亮地改", "火花在写"],
+    "searching": ["小火花找找", "仔细看看"],
+    "running": ["点火启动", "热起来了"],
+    "success": ["火花落地", "亮起来了"],
+    "error": ["闪了一下", "冷却一下"],
+    "compacting": ["把火苗收好"],
+    "confident": ["连胜发光"],
+    "busy": ["全力发光"],
+    "default": ["小火花陪你"]
+  },
+  "states": {
+    "idle": ["*_*", "-*-"],
+    "listening": ["*_*?", "?*_*"],
+    "thinking": ["*..", "**.", "***"],
+    "tool": ["*>", "*<*"],
+    "running": ["*$*", "*%*"],
+    "editing": ["*>_", "_<*"],
+    "searching": ["*?*", "?*?"],
+    "browsing": ["*~*", "~*~"],
+    "delegating": ["*>", "*<*"],
+    "compacting": ["*.*", ".*."],
+    "success": ["*^*", "***"],
+    "error": ["*!*", "*x*"],
+    "waiting": ["*?*", "*_*"],
+    "sleeping": ["*-*", "*z*"]
+  }
+}

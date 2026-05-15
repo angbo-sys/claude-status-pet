@@ -1,0 +1,38 @@
+{
+  "name": "Mono",
+  "description": "A plain ASCII companion for maximum terminal compatibility.",
+  "personality": {
+    "editing": ["editing"],
+    "searching": ["searching"],
+    "running": ["running"],
+    "success": ["done"],
+    "error": ["check"],
+    "compacting": ["compact"],
+    "default": ["ok"]
+  },
+  "personality_zh": {
+    "editing": ["编辑中"],
+    "searching": ["搜索中"],
+    "running": ["运行中"],
+    "success": ["完成"],
+    "error": ["检查"],
+    "compacting": ["压缩"],
+    "default": ["好的"]
+  },
+  "states": {
+    "idle": ["{..}", "{--}"],
+    "listening": ["{..}", "{oo}"],
+    "thinking": ["{..}", "{..}", "{..}"],
+    "tool": ["{>>}", "{<<}"],
+    "running": ["{$$}", "{$-}"],
+    "editing": ["{>_}", "{>o}"],
+    "searching": ["{??}", "{.?}"],
+    "browsing": ["{~~}", "{--}"],
+    "delegating": ["{>>}", "{<<}"],
+    "compacting": ["{..}", "{::}"],
+    "success": ["{^^}", "{ok}"],
+    "error": ["{xx}", "{!!}"],
+    "waiting": ["{??}", "{..}"],
+    "sleeping": ["{zz}", "{--}"]
+  }
+}

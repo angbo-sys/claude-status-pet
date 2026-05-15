@@ -1,0 +1,12 @@
+{
+  "name": "status-pet",
+  "version": "0.1.0",
+  "description": "A tiny Claude Code status-line pet driven by hooks.",
+  "author": {
+    "name": "Yelaina + Codex"
+  },
+  "keywords": ["statusline", "hooks", "pet", "terminal", "claude-code"],
+  "hooks": "./hooks/hooks.json",
+  "skills": "./skills/",
+  "commands": ["./commands/pet.md"]
+}

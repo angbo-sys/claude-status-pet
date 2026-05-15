@@ -1,0 +1,42 @@
+{
+  "name": "Byte",
+  "description": "A compact ASCII terminal companion.",
+  "personality": {
+    "editing": ["steady hands", "shaping bits", "clean cut"],
+    "searching": ["following threads", "checking corners"],
+    "running": ["spinning shell", "terminal hum"],
+    "success": ["clean pass", "nice one", "landed"],
+    "error": ["hmm", "retry?", "needs a look"],
+    "compacting": ["packing context", "tidying thoughts"],
+    "confident": ["streak looks good"],
+    "busy": ["deep work"],
+    "default": ["with you"]
+  },
+  "personality_zh": {
+    "editing": ["稳稳下笔", "整理代码", "手感不错"],
+    "searching": ["找线索中", "翻翻上下文"],
+    "running": ["命令跑起来", "终端在忙"],
+    "success": ["漂亮", "稳稳落地", "完成啦"],
+    "error": ["再看看", "有点不对", "慢慢修"],
+    "compacting": ["收拾记忆", "整理思路"],
+    "confident": ["状态很好"],
+    "busy": ["认真工作中"],
+    "default": ["陪你写代码"]
+  },
+  "states": {
+    "idle": ["[o_o]", "[-_-]"],
+    "listening": ["[._.]", "[o_o]"],
+    "thinking": ["[o_o].", "[o_o]..", "[o_o]..."],
+    "tool": ["[>_>]", "[<_<]"],
+    "running": ["[$_$]", "[$-_]"],
+    "editing": ["[>_>]", "[>_o]"],
+    "searching": ["[o_?]", "[?_o]"],
+    "browsing": ["[o~o]", "[o-o]"],
+    "delegating": ["[>_>]", "[<_<]"],
+    "compacting": ["[o_o]", "[o_o]."],
+    "success": ["[^_^]", "[^o^]"],
+    "error": ["[x_x]", "[!_!]"],
+    "waiting": ["[?_?]", "[o_?]"],
+    "sleeping": ["[-_-] z", "[-_-] zz"]
+  }
+}

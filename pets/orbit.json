@@ -1,0 +1,40 @@
+{
+  "name": "Orbit",
+  "description": "A Unicode dot companion for cleaner terminals.",
+  "personality": {
+    "thinking": ["orbiting context", "quiet pass"],
+    "searching": ["scanning paths", "following signal"],
+    "success": ["settled", "aligned"],
+    "error": ["wobble", "course check"],
+    "compacting": ["folding memory"],
+    "confident": ["stable orbit"],
+    "busy": ["fast orbit"],
+    "default": ["steady"]
+  },
+  "personality_zh": {
+    "thinking": ["绕着上下文转", "安静思考"],
+    "searching": ["扫描路径", "追着信号走"],
+    "success": ["对齐了", "稳定落点"],
+    "error": ["轨道微偏", "校准一下"],
+    "compacting": ["折叠记忆"],
+    "confident": ["轨道稳定"],
+    "busy": ["高速绕行"],
+    "default": ["稳住"]
+  },
+  "states": {
+    "idle": ["◌", "○"],
+    "listening": ["◍", "◎"],
+    "thinking": ["◐", "◓", "◑", "◒"],
+    "tool": ["◆", "◇"],
+    "running": ["▣", "□"],
+    "editing": ["◧", "◨"],
+    "searching": ["◌?", "?◌"],
+    "browsing": ["◍", "◉"],
+    "delegating": ["◆", "◇"],
+    "compacting": ["◒", "◐"],
+    "success": ["●", "◉"],
+    "error": ["×", "✕"],
+    "waiting": ["◔", "◕"],
+    "sleeping": ["·", " "]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "claude-status-pet",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Claude Code status-line pet driven by hooks.",
+  "bin": {
+    "claude-status-pet": "./scripts/pet.js",
+    "claude-status-pet-install-all": "./scripts/install-all.js",
+    "claude-status-pet-install": "./scripts/install.js",
+    "claude-status-pet-switch": "./scripts/pet-switch.js",
+    "claude-status-pet-uninstall": "./scripts/uninstall.js",
+    "claude-status-pet-doctor": "./scripts/doctor.js",
+    "claude-status-pet-preview": "./scripts/pet-preview.js",
+    "claude-status-pet-care": "./scripts/pet-play.js",
+    "claude-status-pet-config": "./scripts/pet-config.js",
+    "claude-status-pet-preset": "./scripts/pet-preset.js",
+    "claude-status-pet-report": "./scripts/pet-report.js",
+    "claude-status-pet-achievements": "./scripts/pet-achievements.js",
+    "claude-status-pet-demo": "./scripts/pet-demo.js",
+    "claude-status-pet-pack": "./scripts/pet-pack.js",
+    "claude-status-pet-import": "./scripts/pet-import.js",
+    "claude-status-pet-setup": "./scripts/pet-setup.js",
+    "claude-status-pet-validate": "./scripts/pet-validate.js",
+    "claude-status-pet-create": "./scripts/pet-create.js"
+  },
+  "scripts": {
+    "install:local": "node ./scripts/install.js",
+    "install:all": "node ./scripts/install-all.js",
+    "install:dry-run": "node ./scripts/install.js --dry-run",
+    "install:all:dry-run": "node ./scripts/install-all.js --dry-run",
+    "doctor": "node ./scripts/doctor.js",
+    "pet:list": "node ./scripts/pet-switch.js --list",
+    "pet:preview": "node ./scripts/pet-preview.js",
+    "pet:care": "node ./scripts/pet-play.js status",
+    "pet:config": "node ./scripts/pet-config.js get",
+    "pet:preset": "node ./scripts/pet-preset.js --list",
+    "pet:report": "node ./scripts/pet-report.js",
+    "pet:achievements": "node ./scripts/pet-achievements.js",
+    "pet:demo": "node ./scripts/pet-demo.js",
+    "pet:setup": "node ./scripts/pet-setup.js",
+    "pet:validate": "node ./scripts/pet-validate.js",
+    "uninstall:dry-run": "node ./scripts/uninstall.js --dry-run",
+    "test": "node ./scripts/test.js",
+    "test:statusline": "node ./scripts/pet-statusline.js",
+    "test:hook": "node ./scripts/pet-hook.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
