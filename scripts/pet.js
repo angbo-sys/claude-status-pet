@@ -15,9 +15,13 @@ const COMMANDS = {
   nap: "pet-play.js",
   pet: "pet-play.js",
   config: "pet-config.js",
+  quick: "pet-quick.js",
   preset: "pet-preset.js",
+  theme: "pet-theme.js",
   report: "pet-report.js",
   achievements: "pet-achievements.js",
+  health: "pet-health.js",
+  growth: "pet-growth.js",
   demo: "pet-demo.js",
   pack: "pet-pack.js",
   import: "pet-import.js",
@@ -44,9 +48,13 @@ Commands:
   nap          Let the pet rest
   pet          Give the pet a tiny pat
   config       Read or update pet configuration
+  quick        Configure pet, theme, language, layout, and visible fields quickly
   preset       Apply a built-in configuration preset
+  theme        Apply a visual theme package
   report       Show today or week companion report
   achievements Show unlocked pet achievements
+  health       Show install, config, care, diary, and recent events
+  growth       Show persistent pet level, XP, unlocks, and growth log
   demo         Print simulated status lines
   pack         Export a pet JSON file
   import       Import a pet JSON file
@@ -64,17 +72,20 @@ function main() {
     usage();
     return;
   }
+
   const script = COMMANDS[command];
   if (!script) {
     console.error(`Unknown command: ${command}`);
     usage();
     process.exit(1);
   }
+
   const args = process.argv.slice(3);
   if (command === "list") args.unshift("--list");
   if (["care", "feed", "play", "nap", "pet"].includes(command)) {
     args.unshift(command === "care" ? "status" : command);
   }
+
   const result = spawnSync(process.execPath, [path.join(__dirname, script), ...args], {
     stdio: "inherit"
   });
