@@ -18,21 +18,43 @@ function argValue(flag, fallback) {
   if (idx >= 0 && process.argv[idx + 1]) return process.argv[idx + 1];
   return fallback;
 }
-function hasFlag(flag) { return process.argv.includes(flag); }
 
-function copyDir(src, dest) { ensureDir(dest); fs.cpSync(src, dest, { recursive: true, force: true }); }
-function copyFile(src, dest) { ensureDir(path.dirname(dest)); fs.copyFileSync(src, dest); }
+function hasFlag(flag) {
+  return process.argv.includes(flag);
+}
+
+function copyDir(src, dest) {
+  ensureDir(dest);
+  fs.cpSync(src, dest, { recursive: true, force: true });
+}
+
+function copyFile(src, dest) {
+  ensureDir(path.dirname(dest));
+  fs.copyFileSync(src, dest);
+}
 
 function runInstall({ installDir, settingsPath, pet, dryRun, noHooks }) {
-  const args = [path.join(ROOT, "scripts", "install.js"), "--pet", pet, "--dir", installDir, "--settings", settingsPath];
+  const args = [
+    path.join(ROOT, "scripts", "install.js"),
+    "--dir",
+    installDir,
+    "--settings",
+    settingsPath
+  ];
+  if (pet) args.push("--pet", pet);
   if (dryRun) args.push("--dry-run");
   if (noHooks) args.push("--no-hooks");
-  const result = spawnSync(process.execPath, args, { cwd: ROOT, encoding: "utf8", stdio: "inherit" });
+
+  const result = spawnSync(process.execPath, args, {
+    cwd: ROOT,
+    encoding: "utf8",
+    stdio: "inherit"
+  });
   if (result.status !== 0) process.exit(result.status || 1);
 }
 
 function main() {
-  const pet = argValue("--pet", "byte");
+  const pet = argValue("--pet", "");
   const installDir = path.resolve(argValue("--dir", DEFAULT_INSTALL_DIR));
   const settingsPath = path.resolve(argValue("--settings", DEFAULT_SETTINGS));
   const skillsDir = path.resolve(argValue("--skills-dir", DEFAULT_SKILLS_DIR));
