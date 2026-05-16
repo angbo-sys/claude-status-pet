@@ -11,6 +11,8 @@ const NAMES = {
   "terminal-runner": ["Terminal runner", "终端跑者"],
   "full-energy": ["Full energy", "能量满格"],
   "full-bond": ["Full bond", "亲密满格"],
+  "growing-companion": ["Growing companion", "成长伙伴"],
+  "tiny-legend": ["Tiny legend", "小小传说"],
   "chinese-mode": ["Chinese mode", "中文模式"],
   powerline: ["Powerline", "能量线"]
 };
@@ -18,11 +20,15 @@ const NAMES = {
 function main() {
   const config = loadConfig();
   const state = readJson(statePath(), { sessions: {} });
-  const status = state.sessions?.[state.latest_session_id] || state.sessions?.default || {};
+  const session = state.sessions?.[state.latest_session_id] || state.sessions?.default || {};
+  const status = { ...session, care: session.care || state.pet?.care, growth: session.growth || state.pet?.growth };
   const achievements = achievementsFor(status, config);
   const isZh = config.language === "zh";
   console.log(isZh ? "宠物成就" : "Pet Achievements");
-  if (!achievements.length) { console.log(isZh ? "还没有解锁，继续一起工作吧。" : "No achievements yet. Keep going."); return; }
+  if (!achievements.length) {
+    console.log(isZh ? "还没有解锁，继续一起工作吧。" : "No achievements yet. Keep going.");
+    return;
+  }
   for (const id of achievements) console.log(`- ${(NAMES[id] || [id, id])[isZh ? 1 : 0]}`);
 }
 

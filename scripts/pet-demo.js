@@ -2,7 +2,13 @@
 
 const { loadConfig, loadPet, translate } = require("./pet-lib");
 
-const STATES = [["editing", "Write"], ["searching", "Grep"], ["testing", "Bash"], ["success", ""], ["error", "Bash"]];
+const STATES = [
+  ["editing", "Write"],
+  ["searching", "Grep"],
+  ["testing", "Bash"],
+  ["success", ""],
+  ["error", "Bash"]
+];
 
 function main() {
   const config = loadConfig();
