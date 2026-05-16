@@ -6,8 +6,8 @@ Show the user how their Claude Code status-line pet is configured. Mention:
 
 - The active pet is controlled by `CLAUDE_STATUS_PET` or the installed
   `config.json`.
-- Available bundled pets are `byte`, `orbit`, `spark`, and `mono`.
-- Display modes are `quiet`, `compact`, `balanced`, and `full`.
+- Available bundled pets are `byte`, `orbit`, `spark`, `mono`, and `pico`.
+- Display modes are `quiet`, `compact`, `balanced`, `full`, and `panel`.
 - Palettes are `mono`, `classic`, `soft`, `terminal`, and `alert`.
 - Languages are `en` and `zh`.
 - The pet tracks lightweight energy and bond values.
@@ -21,11 +21,19 @@ Show the user how their Claude Code status-line pet is configured. Mention:
 - Pet frames can be previewed with `scripts/pet-preview.js`.
 - Pet care actions are available through `scripts/pet.js care/feed/play/pet/nap`.
 - Config changes are available through `scripts/pet.js config set <key> <value>`.
+- Quick user-facing setup is available through `scripts/pet.js quick`, for
+  example `quick cute`, `quick focus --pet byte`, or
+  `quick --show git,context,tasks --hide cost,elapsed`.
 - Pet files can be validated with `scripts/pet-validate.js`.
 - New pet templates can be created with `scripts/pet-create.js`.
 - Activity reports are available through `scripts/pet.js report` and
   `scripts/pet.js report week`.
 - Achievements are available through `scripts/pet.js achievements`.
+- Health checks are available through `scripts/pet.js health`.
+- Growth progress is available through `scripts/pet.js growth`; growth is stored
+  in the global pet profile and must persist across session switches.
+- Theme packages are available through `scripts/pet.js theme focus|cute|dense|night|minimal`.
+- Panel layout can be tuned with `panelRows` and `panelCompact`.
 - Pet sharing uses `scripts/pet.js pack <pet> <file.json>` and
   `scripts/pet.js import <file.json>`.
 - Pet file names are restricted to lowercase letters, numbers, underscores, and

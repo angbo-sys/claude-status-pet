@@ -29,7 +29,7 @@
     "searching": ["{??}", "{.?}"],
     "browsing": ["{~~}", "{--}"],
     "delegating": ["{>>}", "{<<}"],
-    "compacting": ["{..}", "{::}"],
+    "compacting": ["{..}", "{"}],
     "success": ["{^^}", "{ok}"],
     "error": ["{xx}", "{!!}"],
     "waiting": ["{??}", "{..}"],

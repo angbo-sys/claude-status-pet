@@ -1,0 +1,51 @@
+{
+  "name": "Pico",
+  "description": "A blocky little terminal pet with expressive ears.",
+  "color": "38;5;209",
+  "personality": {
+    "editing": ["tap tap", "tiny paws"],
+    "searching": ["ears up", "sniffing clues"],
+    "running": ["zooming", "little engine"],
+    "testing": ["holding breath", "test trot"],
+    "installing": ["stacking blocks"],
+    "success": ["tail wiggle", "pico proud"],
+    "error": ["ear tilt", "soft reset"],
+    "compacting": ["folding blanket"],
+    "confident": ["brave little block"],
+    "busy": ["busy paws"],
+    "default": ["pico here"]
+  },
+  "personality_zh": {
+    "editing": ["哒哒敲", "小爪子在忙"],
+    "searching": ["耳朵竖起来", "闻闻线索"],
+    "running": ["小跑起来", "引擎启动"],
+    "testing": ["屏住呼吸", "测试小跑"],
+    "installing": ["叠叠积木"],
+    "success": ["尾巴晃晃", "Pico 得意"],
+    "error": ["歪歪耳朵", "轻轻重来"],
+    "compacting": ["把毯子叠好"],
+    "confident": ["勇敢小方块"],
+    "busy": ["小爪飞快"],
+    "default": ["Pico 陪你"]
+  },
+  "states": {
+    "idle": ["[u_u]", "[o_o]"],
+    "listening": ["[o_o]", "[O_O]"],
+    "thinking": ["[o_o.]", "[o_o:]", "[o_o?]"],
+    "tool": [">o<", "[<o>]"],
+    "running": ["[v_v]", "[V_V]"],
+    "testing": ["[T_T]", "[T_o]"],
+    "installing": ["[#_#]", "[#o#]"],
+    "git": ["[g_g]", "[g_o]"],
+    "reviewing": ["[r_r]", "[r_o]"],
+    "editing": ["[>_o]", "[o_<]"],
+    "searching": ["[o_?]", "[?_o]"],
+    "browsing": ["[o~o]", "[O~O]"],
+    "delegating": [">_>", "[<_<]"],
+    "compacting": ["[=_=]", "[=o=]"],
+    "success": ["[^_^]", "[^o^]"],
+    "error": ["[x_x]", "[!_!]"],
+    "waiting": ["[?_?]", "[o_o]"],
+    "sleeping": ["[-_-]z", "[-_-]Z"]
+  }
+}
