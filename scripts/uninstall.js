@@ -10,14 +10,27 @@ const DEFAULT_INSTALL_DIR = path.join(HOME, ".claude", "status-pet");
 const DEFAULT_SETTINGS = path.join(HOME, ".claude", "settings.json");
 const DEFAULT_SKILL_DIR = path.join(HOME, ".claude", "skills", "pet-control");
 const DEFAULT_COMMAND_FILE = path.join(HOME, ".claude", "commands", "pet.md");
-const EVENTS = ["SessionStart", "UserPromptSubmit", "PreToolUse", "PostToolUse", "Notification", "Stop", "SubagentStop", "PreCompact", "SessionEnd"];
+const EVENTS = [
+  "SessionStart",
+  "UserPromptSubmit",
+  "PreToolUse",
+  "PostToolUse",
+  "Notification",
+  "Stop",
+  "SubagentStop",
+  "PreCompact",
+  "SessionEnd"
+];
 
 function argValue(flag, fallback) {
   const idx = process.argv.indexOf(flag);
   if (idx >= 0 && process.argv[idx + 1]) return process.argv[idx + 1];
   return fallback;
 }
-function hasFlag(flag) { return process.argv.includes(flag); }
+
+function hasFlag(flag) {
+  return process.argv.includes(flag);
+}
 
 function backup(file) {
   if (!fs.existsSync(file)) return "";
@@ -33,7 +46,9 @@ function removeHooks(settings) {
   for (const event of EVENTS) {
     if (!Array.isArray(settings.hooks[event])) continue;
     const before = settings.hooks[event].length;
-    settings.hooks[event] = settings.hooks[event].filter((entry) => !JSON.stringify(entry).includes("status-pet/scripts/pet-hook.js"));
+    settings.hooks[event] = settings.hooks[event].filter((entry) => {
+      return !JSON.stringify(entry).includes("status-pet/scripts/pet-hook.js");
+    });
     removed += before - settings.hooks[event].length;
     if (settings.hooks[event].length === 0) delete settings.hooks[event];
   }
@@ -60,7 +75,10 @@ function main() {
     console.log(`Would remove statusLine: ${hadStatusLine ? "yes" : "no"}`);
     console.log(`Would remove hook entries: ${hookCount}`);
     console.log(`Would remove install dir: ${keepFiles ? "no" : installDir}`);
-    if (all) { console.log(`Would remove skill dir: ${skillDir}`); console.log(`Would remove command file: ${commandFile}`); }
+    if (all) {
+      console.log(`Would remove skill dir: ${skillDir}`);
+      console.log(`Would remove command file: ${commandFile}`);
+    }
     return;
   }
 
@@ -68,12 +86,18 @@ function main() {
   const backupFile = backup(settingsPath);
   writeJsonAtomic(settingsPath, settings);
   if (!keepFiles) fs.rmSync(installDir, { recursive: true, force: true });
-  if (all) { fs.rmSync(skillDir, { recursive: true, force: true }); fs.rmSync(commandFile, { force: true }); }
+  if (all) {
+    fs.rmSync(skillDir, { recursive: true, force: true });
+    fs.rmSync(commandFile, { force: true });
+  }
 
   if (backupFile) console.log(`Backed up settings to ${backupFile}`);
   console.log(`Updated ${settingsPath}`);
   if (!keepFiles) console.log(`Removed ${installDir}`);
-  if (all) { console.log(`Removed ${skillDir}`); console.log(`Removed ${commandFile}`); }
+  if (all) {
+    console.log(`Removed ${skillDir}`);
+    console.log(`Removed ${commandFile}`);
+  }
   console.log("Restart Claude Code to fully unload the status pet.");
 }
 
